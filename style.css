@@ -1,0 +1,280 @@
+:root {
+  --image-width: 85%;
+  --image-height: 100%;
+  --form-width: 330px;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 🚫 منع الاسكرول */
+}
+
+/* NAVBAR */
+.navbar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: #fff;
+  padding: 14px 28px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  z-index: 10;
+  transition: all .35s ease;
+}
+
+/* 🔥 Hover Animation */
+.navbar:hover {
+  transform: translate(-50%, -6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.15);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  font-size: 14px;
+  color: #444;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: color .3s;
+}
+
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #42d3c4;
+  transition: .3s;
+}
+
+.nav-links li:hover {
+  color: #42d3c4;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.nav-btn {
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* MAIN */
+.layout {
+  flex: 1;
+  display: flex;
+}
+
+/* LEFT */
+.left {
+  margin-top: 100px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: var(--form-width);
+  background: #fff;
+  padding: 38px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.08);
+  transition: transform .35s, box-shadow .35s;
+}
+
+/* ✨ Hover Form */
+.login-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(0,0,0,.12);
+}
+
+.login-card h2 {
+  color: #42d3c4;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.login-card p {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.login-card label {
+  font-size: 13px;
+  color: #475569;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* TOGGLE */
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.switch {
+  position: relative;
+  width: 38px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #cbd5e1;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: .3s;
+}
+
+.switch input:checked + .slider {
+  background: #42d3c4;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #42d3c4;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+.signup {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.signup span {
+  color: #42d3c4;
+  cursor: pointer;
+}
+
+/* SOCIAL */
+.social {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.social i {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.right {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img {
+  margin-right: 200px;
+  margin-top: 25px;
+  width: var(--image-width);
+  height: var(--image-height);
+  object-fit: contain;
+}
+
+/* FOOTER */
+.footer {
+    margin-bottom: 50px;
+  transform: translateY(-15px);
+  padding: 20px 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+.footer ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+.footer li {
+  cursor: pointer;
+}
